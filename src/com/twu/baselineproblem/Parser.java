@@ -18,9 +18,9 @@ public class Parser {
         String[] list = split();
         double[] resultArray = new double[2];
         resultArray[0] = Double.parseDouble(list[list.length - 1]);
-        if (list[1].equals("imported")) {
+        if (item.contains("imported")) {
             resultArray[1] = 5.0;
-            if (list[1].equals("book")) {
+            if (list[1].equals("book") || item.contains("chocolates")) {
                 resultArray[1] += 0.0;
             } else {
                 resultArray[1] += 10.0;
