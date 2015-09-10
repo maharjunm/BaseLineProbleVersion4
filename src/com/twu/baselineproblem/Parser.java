@@ -33,4 +33,10 @@ public class Parser {
         }
         return resultArray;
     }
+
+    public String giveProperOutput() {
+        String[] list = item.split(" at ");
+        String result = list[0]+": "+list[1];
+        return result;
+    }
 }

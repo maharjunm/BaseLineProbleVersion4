@@ -78,4 +78,13 @@ public class ParserTest {
         assertArrayEquals(parser.parse(), result, 0.00);
     }
 
+    @Test
+    public void shouldRuturnProperOutput() {
+        String input = "1 book at 12.49";
+        Parser parser = new Parser(input);
+        String result = "1 book: 12.49";
+
+        assertEquals(parser.giveProperOutput(), result);
+    }
+
 }
