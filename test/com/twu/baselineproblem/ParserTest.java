@@ -51,4 +51,13 @@ public class ParserTest {
         assertArrayEquals(parser.parse(), result, 0.00);
     }
 
+    @Test
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsImportedAndPerfume() {
+        String input = "1 imported bottle of perfume at 47.50";
+        Parser parser = new Parser(input);
+        double result[] = {47.50, 15.0};
+
+        assertArrayEquals(parser.parse(), result, 0.00);
+    }
+
 }
