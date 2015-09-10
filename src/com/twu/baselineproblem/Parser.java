@@ -40,11 +40,14 @@ public class Parser {
         double itemRate = valuesOfItem[0];
         double taxPercent = valuesOfItem[1];
         TaxCalculator taxCalculator = new TaxCalculator(itemRate, taxPercent);
-        double finalRateOfItem = taxCalculator.calculateTax() + itemRate ;
+        double finalRateOfItem = taxCalculator.calculateTax() + itemRate;
         finalRateOfItem = finalRateOfItem * 100;
         finalRateOfItem = Math.round(finalRateOfItem);
         finalRateOfItem = finalRateOfItem / 100;
         String result = list[0] + ": " + finalRateOfItem;
-        return result;
+        if (result.length() == item.length() - 1)
+            return result;
+        else
+            return result + "0";
     }
 }

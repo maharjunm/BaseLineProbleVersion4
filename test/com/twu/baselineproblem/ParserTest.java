@@ -105,4 +105,13 @@ public class ParserTest {
         assertEquals(parser.giveProperOutput(), result);
     }
 
+    @Test
+    public void shouldRuturnProperOutputForImportedChocolatesItems() {
+        String input = "1 imported box of chocolates at 10.00";
+        Parser parser = new Parser(input);
+        String result = "1 imported box of chocolates: 10.50";
+
+        assertEquals(parser.giveProperOutput(), result);
+    }
+
 }
