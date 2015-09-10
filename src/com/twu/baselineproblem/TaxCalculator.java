@@ -12,6 +12,6 @@ public class TaxCalculator {
     }
 
     public double calculateTax() {
-        return 0;
+        return (itemRate * taxPercent) / 100;
     }
 }

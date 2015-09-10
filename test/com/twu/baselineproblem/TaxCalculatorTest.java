@@ -26,4 +26,11 @@ public class TaxCalculatorTest {
 
         assertEquals(0.0, taxCalculator.calculateTax(), 0.00);
     }
+
+    @Test
+    public void shouldReturnTheValueWhenTwoValuesAreNonZeros() {
+        TaxCalculator taxCalculator = new TaxCalculator(1,1);
+
+        assertEquals(0.01, taxCalculator.calculateTax(), 0.00);
+    }
 }
