@@ -42,4 +42,13 @@ public class ParserTest {
         assertArrayEquals(parser.parse(), result, 0.00);
     }
 
+    @Test
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsImportedAndChocolates() {
+        String input = "1 imported box of chocolates at 10.00";
+        Parser parser = new Parser(input);
+        double result[] = {10.00, 5.0};
+
+        assertArrayEquals(parser.parse(), result, 0.00);
+    }
+
 }
