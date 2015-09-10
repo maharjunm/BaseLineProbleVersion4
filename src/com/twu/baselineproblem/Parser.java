@@ -18,7 +18,10 @@ public class Parser {
         String[] list = split();
         double[] resultArray = new double[2];
         resultArray[0] = Double.parseDouble(list[list.length-1]);
-        resultArray[1] = 0.0;
+        if(list[1].equals("book") ||list[1].equals("chocolate") )
+             resultArray[1] = 0.0;
+        else
+            resultArray[1] = 10.0;
         return resultArray;
     }
 }

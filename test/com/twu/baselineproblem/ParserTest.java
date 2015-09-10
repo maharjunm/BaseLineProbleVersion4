@@ -16,10 +16,28 @@ public class ParserTest {
     }
 
     @Test
-    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsNotImported() {
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsNotImportedAndBookItem() {
         String input = "1 book at 12.49";
         Parser parser = new Parser(input);
         double result[] = {12.49, 0.0};
+
+        assertArrayEquals(parser.parse(), result, 0.00);
+    }
+
+    @Test
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsNotImported() {
+        String input = "1 music CD at 14.99";
+        Parser parser = new Parser(input);
+        double result[] = {14.99, 10.0};
+
+        assertArrayEquals(parser.parse(), result, 0.00);
+    }
+
+    @Test
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsNotImportedAndChocolates() {
+        String input = "1 chocolate bar at 0.85";
+        Parser parser = new Parser(input);
+        double result[] = {0.85, 0.0};
 
         assertArrayEquals(parser.parse(), result, 0.00);
     }
