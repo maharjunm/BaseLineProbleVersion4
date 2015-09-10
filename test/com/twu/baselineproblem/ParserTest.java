@@ -60,4 +60,13 @@ public class ParserTest {
         assertArrayEquals(parser.parse(), result, 0.00);
     }
 
+    @Test
+    public void shouldRuturnTheItemRateAndTaxPercentWhenItemIsNonImportedAndMedicalItem() {
+        String input = "1 packet of headache pills at 9.75";
+        Parser parser = new Parser(input);
+        double result[] = {9.75, 0.0};
+
+        assertArrayEquals(parser.parse(), result, 0.00);
+    }
+
 }

@@ -26,7 +26,7 @@ public class Parser {
                 resultArray[1] += 10.0;
             }
         } else {
-            if (list[1].equals("book") || list[1].equals("chocolate"))
+            if (list[1].equals("book") || list[1].equals("chocolate") || list[list.length - 3].equals("pills"))
                 resultArray[1] = 0.0;
             else
                 resultArray[1] = 10.0;
