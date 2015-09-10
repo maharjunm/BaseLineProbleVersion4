@@ -96,4 +96,13 @@ public class ParserTest {
         assertEquals(parser.giveProperOutput(), result);
     }
 
+    @Test
+    public void shouldRuturnProperOutputForNonImportedChocolatesItems() {
+        String input = "1 chocolate bar at 0.85";
+        Parser parser = new Parser(input);
+        String result = "1 chocolate bar: 0.85";
+
+        assertEquals(parser.giveProperOutput(), result);
+    }
+
 }
