@@ -114,4 +114,13 @@ public class ParserTest {
         assertEquals(parser.giveProperOutput(), result);
     }
 
+    @Test
+    public void shouldRuturnProperOutputForImportedPerfumeItems() {
+        String input = "1 imported bottle of perfume at 47.50";
+        Parser parser = new Parser(input);
+        String result = "1 imported bottle of perfume: 54.65";
+
+        assertEquals(parser.giveProperOutput(), result);
+    }
+
 }

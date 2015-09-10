@@ -45,7 +45,11 @@ public class Parser {
         finalRateOfItem = Math.round(finalRateOfItem);
         finalRateOfItem = finalRateOfItem / 100;
         String result = list[0] + ": " + finalRateOfItem;
-        if (result.length() == item.length() - 1)
+        int decimal = Integer.parseInt(result.charAt(result.length() - 1) + "");
+        if (decimal != 5) {
+            result = result.substring(0, result.length() - 1) + "5";
+        }
+        if (result.length() == item.length() - 2)
             return result;
         else
             return result + "0";
