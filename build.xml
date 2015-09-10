@@ -1,0 +1,32 @@
+<project name="baselineproblem" default="run" basedir=".">
+
+    <target name="clean">
+        <delete dir="out"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="out"/>
+        <javac srcdir="src;test" destdir="out">
+
+            <classpath>
+                <pathelement path="lib/junit-4.11.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="run">
+        <junit printsummary="yes" haltonfailure="true">
+            <classpath>
+                <pathelement path="lib/hamcrest-core-1.3.jar"/>
+                <pathelement location="lib/junit-4.11.jar"/>
+                <pathelement location="out"/>
+            </classpath>
+            <batchtest fork="yes">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+</project>
