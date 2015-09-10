@@ -12,4 +12,11 @@ public class TaxCalculatorTest {
 
         assertEquals(0.0, taxCalculator.calculateTax(), 0.00);
     }
+
+    @Test
+    public void shouldReturnTheValueAsZeroWhenFirstValueIsZero() {
+        TaxCalculator taxCalculator = new TaxCalculator(0,1);
+
+        assertEquals(0.0, taxCalculator.calculateTax(), 0.00);
+    }
 }
